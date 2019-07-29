@@ -35,9 +35,12 @@ class FruitTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
+        
 
       cell.textLabel?.text = allFruit[indexPath.row].title
-
+    cell.detailTextLabel?.text = allFruit[indexPath.row].text
+        
+cell.imageView?.image = UIImage(named: allFruit[indexPath.row].image)
         return cell
     }
  override func tableView(_ tableview: UITableView, titleForHeaderInSection section: Int)->String? {
